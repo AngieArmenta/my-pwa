@@ -1,113 +1,105 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-
-/* Reset */
-body, html, #root {
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f4f6f9;
+}
+
+/* ===== ESTILOS BASE ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
   color: #333;
-}
-
-/* Layout tipo App Shell */
-.app-container {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Header */
-.app-header {
-  background: #0d6efd;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Main */
-.app-main {
-  flex: 1;
+.App {
+  width: 90%;
+  max-width: 600px;
+  background: white;
   padding: 2rem;
-  overflow-y: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-  background: #fff;
-  padding: 1rem 1.5rem;
-  margin: 1rem 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* ===== TÍTULO ===== */
+h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.2rem);
 }
 
-.btn {
-  display: inline-block;
-  background: #0d6efd;
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  margin-top: 1rem;
+/* ===== FORMULARIO ===== */
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
 }
 
-.btn:hover {
-  background: #0b5ed7;
+button:hover {
+  background-color: #005fcc;
 }
 
-/* Footer */
-.app-footer {
-  background: #fff;
+/* ===== LISTA DE TAREAS ===== */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-list li {
   padding: 0.8rem;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #ddd;
+  background: #f2f2f2;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1rem;
+  word-wrap: break-word;
 }
 
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+  .App {
+    width: 95%;
+    padding: 1.2rem;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+}
